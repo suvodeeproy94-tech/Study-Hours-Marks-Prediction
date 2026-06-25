@@ -22,3 +22,6 @@ Thumbs.db
 
 # Temporary log files should not be uploaded.
 *.log
+
+# Publication review images are temporary and should not be uploaded.
+.zenodo_pdf_review/

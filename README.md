@@ -324,6 +324,15 @@ The paper clearly states that the dataset is synthetic and is used only for
 learning. It includes related work, equations, a baseline comparison,
 five-fold cross-validation, ethics, limitations, results, and IEEE references.
 
+The Zenodo-ready Version 1.0 package also includes:
+
+- A visually checked PDF preprint.
+- The IEEE-style Word source.
+- The synthetic dataset as CSV.
+- CC BY 4.0 licence information.
+- Citation and Zenodo metadata files.
+- Source code, tests, graph, and file checksums.
+
 Run the research evaluation:
 
 ```bash

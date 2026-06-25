@@ -215,9 +215,26 @@ def add_title_block(document):
 
     affiliation = document.add_paragraph()
     affiliation.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    affiliation.paragraph_format.space_after = Pt(10)
+    affiliation.paragraph_format.space_after = Pt(3)
     affiliation_run = affiliation.add_run("Independent Student Researcher")
     set_font(affiliation_run, size=10, italic=True)
+
+    publication_status = document.add_paragraph()
+    publication_status.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    publication_status.paragraph_format.space_after = Pt(2)
+    status_run = publication_status.add_run(
+        "PREPRINT | Version 1.0 | June 25, 2026 | Not peer reviewed"
+    )
+    set_font(status_run, size=9, bold=True)
+
+    license_line = document.add_paragraph()
+    license_line.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    license_line.paragraph_format.space_after = Pt(8)
+    license_run = license_line.add_run(
+        "Licensed under Creative Commons Attribution 4.0 International "
+        "(CC BY 4.0)"
+    )
+    set_font(license_run, size=8, italic=True)
 
     two_column_section = document.add_section(WD_SECTION.CONTINUOUS)
     two_column_section.page_width = Inches(8.5)
@@ -660,6 +677,53 @@ def add_paper_content(document):
         "claims that the data cannot support."
     )
 
+    add_section_heading(document, "X. Publication Statements")
+    add_subheading(document, "A. Data Availability")
+    add_body(
+        document,
+        "The complete synthetic data set is included with this publication as "
+        "study_hours_marks_dataset.csv. No real student data was collected or used."
+    )
+    add_subheading(document, "B. Code Availability")
+    add_body(
+        document,
+        "The Python source code, unit tests, research evaluation script, dependency "
+        "list, README file, graph, and document builders are included with this "
+        "publication. No public code repository link was available when Version 1.0 "
+        "was prepared."
+    )
+    add_subheading(document, "C. Funding")
+    add_body(
+        document,
+        "This work received no grant, sponsor payment, or other external funding."
+    )
+    add_subheading(document, "D. Conflict of Interest")
+    add_body(
+        document,
+        "The author declares no conflict of interest."
+    )
+    add_subheading(document, "E. Author Contribution")
+    add_body(
+        document,
+        "Suvodeep Roy designed the project, reviewed the source code, checked the "
+        "results, interpreted the findings, and approved the final paper."
+    )
+    add_subheading(document, "F. AI Assistance Disclosure")
+    add_body(
+        document,
+        "OpenAI Codex assisted with code review, language editing, document layout, "
+        "and preparation of supporting files. The author directed the work, reviewed "
+        "the content, checked the reported results, and remains responsible for the "
+        "final publication."
+    )
+    add_subheading(document, "G. Licence and Peer-Review Status")
+    add_body(
+        document,
+        "This is Version 1.0 of an educational preprint. It has not been peer "
+        "reviewed. The work is released under the Creative Commons Attribution 4.0 "
+        "International licence."
+    )
+
     add_section_heading(document, "References")
     references = [
         (
@@ -732,11 +796,14 @@ def build_ieee_paper():
     )
     document.core_properties.author = "Suvodeep Roy"
     document.core_properties.subject = (
-        "IEEE-style educational machine learning research paper"
+        "Version 1.0 educational machine learning preprint"
     )
     document.core_properties.keywords = (
         "educational data mining, linear regression, marks prediction, "
         "study hours, reproducible machine learning"
+    )
+    document.core_properties.comments = (
+        "Preprint. Not peer reviewed. CC BY 4.0."
     )
 
     document.save(OUTPUT_FILE)
