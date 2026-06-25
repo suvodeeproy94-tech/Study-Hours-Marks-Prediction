@@ -24,6 +24,7 @@
 - [Input Validation](#input-validation)
 - [Graph](#graph)
 - [Testing](#testing)
+- [Research Paper and Evaluation](#research-paper-and-evaluation)
 - [Common Problems and Solutions](#common-problems-and-solutions)
 - [Limitations](#limitations)
 - [Future Improvements](#future-improvements)
@@ -310,6 +311,30 @@ The tests check:
 - Empty, text, negative, and above-24-hour inputs.
 - Prediction results remain between 0 and 100.
 - Evaluation measurements are created correctly.
+
+## Research Paper and Evaluation
+
+The project includes an IEEE-style research paper:
+
+```text
+Study_Hours_Marks_Prediction_IEEE_Research_Paper.docx
+```
+
+The paper clearly states that the dataset is synthetic and is used only for
+learning. It includes related work, equations, a baseline comparison,
+five-fold cross-validation, ethics, limitations, results, and IEEE references.
+
+Run the research evaluation:
+
+```bash
+python research_evaluation.py
+```
+
+This file reproduces:
+
+- Linear Regression test results.
+- Mean-value baseline results.
+- Five-fold cross-validation results.
 
 ## Common Problems and Solutions
 
