@@ -1,0 +1,24 @@
+# Python virtual environments contain installed libraries for one computer.
+venv/
+.venv/
+env/
+
+# Python creates these temporary cache files automatically.
+__pycache__/
+*.py[cod]
+
+# Test and coverage tools may create these temporary folders and files.
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Code editors may create personal settings.
+.vscode/
+.idea/
+
+# Operating systems may create these files.
+.DS_Store
+Thumbs.db
+
+# Temporary log files should not be uploaded.
+*.log

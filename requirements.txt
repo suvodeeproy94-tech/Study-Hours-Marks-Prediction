@@ -1,0 +1,8 @@
+# Pandas is used to create and manage the student dataset.
+pandas>=2.2,<4.0
+
+# Matplotlib is used to create the study-hours and marks graph.
+matplotlib>=3.9,<4.0
+
+# Scikit-learn is used to train and evaluate the Linear Regression model.
+scikit-learn>=1.5,<2.0
