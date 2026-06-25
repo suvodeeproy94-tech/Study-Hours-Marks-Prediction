@@ -1,0 +1,5 @@
+# Keep publication and image files byte-for-byte unchanged.
+*.pdf binary
+*.docx binary
+*.zip binary
+*.png binary
