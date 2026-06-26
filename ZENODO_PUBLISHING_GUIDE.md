@@ -10,6 +10,7 @@
 - Publication date: June 26, 2026
 - Reserved DOI: 10.5281/zenodo.20911341
 - DOI link: https://doi.org/10.5281/zenodo.20911341
+- Repository URL: https://github.com/suvodeeproy94-tech/Study-Hours-Marks-Prediction
 
 ## Files to Upload
 
@@ -25,16 +26,22 @@ Set this file as the main preview:
 Study_Hours_Marks_Prediction_IEEE_Preprint_v1.0.pdf
 ```
 
-## Missing Optional Author Details
+## Optional Author Details
 
 The following details were not added because verified values were not provided:
 
 - ORCID
 - Public email address
 - College or university affiliation
-- Public GitHub repository URL
 
-These details can be added to the Zenodo metadata before publication.
+The public GitHub repository has now been added:
+
+```text
+https://github.com/suvodeeproy94-tech/Study-Hours-Marks-Prediction
+```
+
+The remaining optional author details can be added to the Zenodo metadata before
+publication if you want to show them publicly.
 
 ## DOI Step
 

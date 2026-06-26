@@ -345,6 +345,12 @@ DOI link:
 https://doi.org/10.5281/zenodo.20911341
 ```
 
+GitHub repository:
+
+```text
+https://github.com/suvodeeproy94-tech/Study-Hours-Marks-Prediction
+```
+
 Run the research evaluation:
 
 ```bash
