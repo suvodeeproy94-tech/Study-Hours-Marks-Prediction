@@ -35,6 +35,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DOCX = PROJECT_ROOT / "Study_Hours_Marks_Prediction_IEEE_Research_Paper.docx"
 OUTPUT_PDF = PROJECT_ROOT / "Study_Hours_Marks_Prediction_IEEE_Preprint_v1.0.pdf"
 GRAPH_FILE = PROJECT_ROOT / "images" / "study_hours_marks_graph.png"
+ZENODO_DOI = "10.5281/zenodo.20911341"
+ZENODO_DOI_URL = "https://doi.org/10.5281/zenodo.20911341"
+PUBLICATION_DATE = "June 26, 2026"
 
 PAGE_WIDTH, PAGE_HEIGHT = letter
 SIDE_MARGIN = 0.625 * inch
@@ -88,12 +91,18 @@ def draw_first_page(canvas, document):
     canvas.drawCentredString(
         PAGE_WIDTH / 2,
         PAGE_HEIGHT - 1.42 * inch,
-        "PREPRINT | Version 1.0 | June 25, 2026 | Not peer reviewed",
+        f"PREPRINT | Version 1.0 | {PUBLICATION_DATE} | Not peer reviewed",
+    )
+    canvas.setFont("Times-Roman", 7.8)
+    canvas.drawCentredString(
+        PAGE_WIDTH / 2,
+        PAGE_HEIGHT - 1.54 * inch,
+        f"DOI: {ZENODO_DOI}",
     )
     canvas.setFont("Times-Italic", 7.5)
     canvas.drawCentredString(
         PAGE_WIDTH / 2,
-        PAGE_HEIGHT - 1.57 * inch,
+        PAGE_HEIGHT - 1.66 * inch,
         "Creative Commons Attribution 4.0 International (CC BY 4.0)",
     )
     canvas.setFont("Times-Roman", 8)
@@ -290,6 +299,8 @@ def build_story(document):
         "Suvodeep Roy",
         "Independent Student Researcher",
         "PREPRINT | Version 1.0 | June 25, 2026 | Not peer reviewed",
+        f"PREPRINT | Version 1.0 | {PUBLICATION_DATE} | Not peer reviewed",
+        f"DOI: {ZENODO_DOI}",
         "Licensed under Creative Commons Attribution 4.0 International "
         "(CC BY 4.0)",
     }

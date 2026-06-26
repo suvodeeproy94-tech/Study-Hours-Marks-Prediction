@@ -7,7 +7,9 @@
 - Access: Open
 - Licence: Creative Commons Attribution 4.0 International
 - Version: 1.0
-- Publication date: June 25, 2026
+- Publication date: June 26, 2026
+- Reserved DOI: 10.5281/zenodo.20911341
+- DOI link: https://doi.org/10.5281/zenodo.20911341
 
 ## Files to Upload
 
@@ -36,13 +38,17 @@ These details can be added to the Zenodo metadata before publication.
 
 ## DOI Step
 
-If a DOI is reserved before publication:
+The DOI has already been reserved before publication:
 
-1. Add the DOI to the paper.
-2. Rebuild the PDF and DOCX.
-3. Replace the files in the draft.
-4. Check the Zenodo preview again.
-5. Publish only after the final check.
+```text
+10.5281/zenodo.20911341
+```
+
+Before final publishing:
+
+1. Upload the rebuilt ZIP package.
+2. Check the Zenodo preview again.
+3. Publish only after the final check.
 
 Do not type a made-up DOI.
 

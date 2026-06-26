@@ -333,6 +333,18 @@ The Zenodo-ready Version 1.0 package also includes:
 - Citation and Zenodo metadata files.
 - Source code, tests, graph, and file checksums.
 
+Zenodo DOI:
+
+```text
+10.5281/zenodo.20911341
+```
+
+DOI link:
+
+```text
+https://doi.org/10.5281/zenodo.20911341
+```
+
 Run the research evaluation:
 
 ```bash

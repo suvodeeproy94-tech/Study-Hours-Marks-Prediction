@@ -19,6 +19,9 @@ from docx.shared import Inches, Pt
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_FILE = PROJECT_ROOT / "Study_Hours_Marks_Prediction_IEEE_Research_Paper.docx"
 GRAPH_FILE = PROJECT_ROOT / "images" / "study_hours_marks_graph.png"
+ZENODO_DOI = "10.5281/zenodo.20911341"
+ZENODO_DOI_URL = "https://doi.org/10.5281/zenodo.20911341"
+PUBLICATION_DATE = "June 26, 2026"
 
 PAGE_WIDTH_DXA = 12240
 LEFT_MARGIN_DXA = 900
@@ -223,9 +226,15 @@ def add_title_block(document):
     publication_status.alignment = WD_ALIGN_PARAGRAPH.CENTER
     publication_status.paragraph_format.space_after = Pt(2)
     status_run = publication_status.add_run(
-        "PREPRINT | Version 1.0 | June 25, 2026 | Not peer reviewed"
+        f"PREPRINT | Version 1.0 | {PUBLICATION_DATE} | Not peer reviewed"
     )
     set_font(status_run, size=9, bold=True)
+
+    doi_line = document.add_paragraph()
+    doi_line.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    doi_line.paragraph_format.space_after = Pt(2)
+    doi_run = doi_line.add_run(f"DOI: {ZENODO_DOI}")
+    set_font(doi_run, size=8)
 
     license_line = document.add_paragraph()
     license_line.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -721,7 +730,7 @@ def add_paper_content(document):
         document,
         "This is Version 1.0 of an educational preprint. It has not been peer "
         "reviewed. The work is released under the Creative Commons Attribution 4.0 "
-        "International licence."
+        f"International licence. The reserved Zenodo DOI is {ZENODO_DOI_URL}."
     )
 
     add_section_heading(document, "References")

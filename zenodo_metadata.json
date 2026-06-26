@@ -3,7 +3,8 @@
     "title": "Study Hours and Marks Prediction Using Linear Regression: A Reproducible Beginner Study",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "publication_date": "2026-06-25",
+    "publication_date": "2026-06-26",
+    "doi": "10.5281/zenodo.20911341",
     "description": "This educational preprint presents a reproducible Linear Regression study that predicts marks from study hours using a synthetic dataset of 20 records. It reports a fixed train-test split, a mean-value baseline, five-fold cross-validation, input validation, and unit tests. The work is intended for learning and must not be used for real student assessment. Version 1.0 has not been peer reviewed.",
     "creators": [
       {
@@ -23,6 +24,6 @@
     "license": "cc-by-4.0",
     "access_right": "open",
     "version": "1.0",
-    "notes": "Educational preprint. Not peer reviewed. The dataset is synthetic, and no real student data was collected. The paper, dataset, figures, and publication metadata use CC BY 4.0. The Python source code uses the MIT License."
+    "notes": "Educational preprint. Not peer reviewed. DOI: https://doi.org/10.5281/zenodo.20911341. The dataset is synthetic, and no real student data was collected. The paper, dataset, figures, and publication metadata use CC BY 4.0. The Python source code uses the MIT License."
   }
 }

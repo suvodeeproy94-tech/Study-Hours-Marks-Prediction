@@ -3,7 +3,9 @@ message: "If you use this work, please cite it using the details below."
 title: "Study Hours and Marks Prediction Using Linear Regression: A Reproducible Beginner Study"
 type: article
 version: "1.0"
-date-released: 2026-06-25
+date-released: 2026-06-26
+doi: 10.5281/zenodo.20911341
+url: "https://doi.org/10.5281/zenodo.20911341"
 authors:
   - family-names: "Roy"
     given-names: "Suvodeep"
