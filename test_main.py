@@ -8,10 +8,12 @@ from main.py and verifies that they return safe and expected results.
 import unittest
 
 from main import (
+    GRAPH_FILE,
     create_student_dataset,
     evaluate_prediction_model,
     predict_student_marks,
     prepare_training_and_testing_data,
+    save_and_display_graph,
     train_prediction_model,
     validate_study_hours,
 )
@@ -92,6 +94,19 @@ class PredictionModelTests(unittest.TestCase):
 
         self.assertGreaterEqual(predicted_marks, 0)
         self.assertLessEqual(predicted_marks, 100)
+
+    def test_graph_file_is_created_with_user_prediction(self):
+        predicted_marks = predict_student_marks(self.prediction_model, 5)
+
+        save_and_display_graph(
+            self.student_dataset,
+            self.prediction_model,
+            5,
+            predicted_marks,
+        )
+
+        self.assertTrue(GRAPH_FILE.exists())
+        self.assertGreater(GRAPH_FILE.stat().st_size, 0)
 
 
 if __name__ == "__main__":

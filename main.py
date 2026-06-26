@@ -15,6 +15,13 @@ Main responsibilities:
 import math
 from pathlib import Path
 
+import matplotlib
+
+# This backend saves the graph as an image file without depending on Tkinter.
+# It avoids graph-window errors on computers where Tkinter is not installed
+# correctly.
+matplotlib.use("Agg")
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.linear_model import LinearRegression
@@ -215,12 +222,20 @@ def display_model_equation(prediction_model):
     )
 
 
-def save_and_display_graph(student_dataset, prediction_model):
+def save_and_display_graph(
+    student_dataset,
+    prediction_model,
+    entered_study_hours,
+    predicted_marks,
+):
     """
     Create the study-hours graph, save it as an image, and display it.
 
     Blue points show the original data. The red line shows the predictions
     made by the trained Linear Regression model.
+
+    The green star shows the user's entered study hours and the predicted
+    marks for that input. This helps the graph change based on user input.
     """
 
     study_hours = student_dataset[["Hours"]]
@@ -243,6 +258,31 @@ def save_and_display_graph(student_dataset, prediction_model):
         linewidth=2,
         label="Linear Regression line",
     )
+    plt.scatter(
+        entered_study_hours,
+        predicted_marks,
+        color="green",
+        marker="*",
+        s=220,
+        edgecolors="black",
+        linewidths=1,
+        label="Your prediction",
+        zorder=5,
+    )
+    plt.annotate(
+        f"Your input: {entered_study_hours:g} hours\n"
+        f"Predicted marks: {predicted_marks:.2f}",
+        xy=(entered_study_hours, predicted_marks),
+        xytext=(15, -35),
+        textcoords="offset points",
+        arrowprops={"arrowstyle": "->", "color": "green"},
+        bbox={
+            "boxstyle": "round,pad=0.4",
+            "facecolor": "white",
+            "edgecolor": "green",
+            "alpha": 0.9,
+        },
+    )
     plt.title("Study Hours vs Marks Prediction")
     plt.xlabel("Study Hours")
     plt.ylabel("Marks")
@@ -254,10 +294,6 @@ def save_and_display_graph(student_dataset, prediction_model):
     plt.savefig(GRAPH_FILE, dpi=150)
 
     print(f"\nGraph saved at: {GRAPH_FILE}")
-
-    # The Agg backend is used during automated testing and cannot open a window.
-    if "agg" not in plt.get_backend().lower():
-        plt.show()
 
     plt.close()
 
@@ -325,7 +361,12 @@ def main():
         f"{predicted_marks:.2f} out of 100"
     )
 
-    save_and_display_graph(student_dataset, prediction_model)
+    save_and_display_graph(
+        student_dataset,
+        prediction_model,
+        entered_study_hours,
+        predicted_marks,
+    )
 
 
 # This condition runs the program only when this file is opened directly.

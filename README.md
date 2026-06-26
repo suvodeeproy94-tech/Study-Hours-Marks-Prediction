@@ -122,7 +122,7 @@ flowchart TD
     H -- No --> G
     H -- Yes --> I[Predict marks]
     I --> J[Limit result from 0 to 100]
-    J --> K[Display result and graph]
+    J --> K[Display result and save graph]
 ```
 
 ## Folder Structure
@@ -251,7 +251,7 @@ The program will:
 3. Display the learned equation.
 4. Ask for study hours.
 5. Display predicted marks.
-6. Save and open the graph.
+6. Save the graph with the user's prediction point.
 
 ## Example Output
 
@@ -295,6 +295,8 @@ The program creates the following graph:
 
 - Blue dots represent the original student data.
 - The red line represents the model's prediction pattern.
+- The green star represents the study hours entered by the user and the
+  predicted marks for that input.
 
 ## Testing
 
@@ -388,7 +390,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 This changes the policy only for the current PowerShell window.
 
-### Graph window does not open
+### Where is the graph saved?
 
 Check the saved image:
 
@@ -396,7 +398,8 @@ Check the saved image:
 images/study_hours_marks_graph.png
 ```
 
-The image is saved even when the graph window cannot open.
+The program saves the graph as an image file. This avoids display-window
+problems on systems where Tkinter is not installed correctly.
 
 ### Feature-name warning
 
